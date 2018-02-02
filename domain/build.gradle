@@ -6,7 +6,7 @@ dependencies {
     compile "javax.inject:javax.inject:$javaxInjectVersion"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    
-    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
-    implementation "com.jakewharton.rxrelay2:rxrelay:$rxRelayVersion"
+
+    compile "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    compile "com.jakewharton.rxrelay2:rxrelay:$rxRelayVersion"
 }
