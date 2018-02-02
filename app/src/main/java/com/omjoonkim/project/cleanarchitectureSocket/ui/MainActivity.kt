@@ -31,6 +31,9 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         AndroidInjection.inject(this)
+
+        mainPresenter.start()
+
         button_requestA.setOnClickListener {
             mainPresenter.onClickAButton()
         }
@@ -38,7 +41,5 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         button_requestB.setOnClickListener {
             mainPresenter.onClickBButton()
         }
-
     }
-
 }
