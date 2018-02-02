@@ -9,16 +9,15 @@ import com.omjoonkim.project.data.executor.JobExecutor
 import com.omjoonkim.project.data.repository.ExampleConnectable
 import com.omjoonkim.project.domain.executor.PostExecutionThread
 import com.omjoonkim.project.domain.executor.ThreadExecutor
-import com.omjoonkim.project.domain.interactor.ExampleCnnectableUseCase
 import com.omjoonkim.project.domain.repository.ExampleRepository
 import com.omjoonkim.project.remote.AppSocket
 import com.omjoonkim.project.remote.ExampleConnectableImpl
-import com.omjoonkim.project.remote.SocketServiceFactory
+import com.omjoonkim.project.remote.AppSocketServiceFactory
 import dagger.Module
 import dagger.Provides
 
 @Module
-internal class ApplicationModule {
+open class ApplicationModule {
 
     @Provides
     @PerApplication
@@ -26,7 +25,7 @@ internal class ApplicationModule {
 
     @Provides
     @PerApplication
-    internal fun provideExampleSocket(): AppSocket = SocketServiceFactory.exampleSocket()
+    internal fun provideExampleSocket(): AppSocket = AppSocketServiceFactory.exampleSocket()
 
     @Provides
     @PerApplication
@@ -45,12 +44,4 @@ internal class ApplicationModule {
     @Provides
     @PerApplication
     internal fun providePostExecutionThread(uiThread: UiThread): PostExecutionThread = uiThread
-
-    @Provides
-    @PerApplication
-    internal fun provideExampleConnectableUseCase(
-        repository: ExampleRepository,
-        threadExecutor: ThreadExecutor,
-        postExecutionThread: PostExecutionThread
-    ): ExampleCnnectableUseCase = ExampleCnnectableUseCase(repository, threadExecutor, postExecutionThread)
 }
