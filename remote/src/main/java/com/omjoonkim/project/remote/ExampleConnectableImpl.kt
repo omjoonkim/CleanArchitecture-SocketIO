@@ -17,7 +17,7 @@ class ExampleConnectableImpl @Inject constructor(
     private val aMapper: ModelAEntityMapper,
     private val bMapper: ModelBEntityMapper
 ) : ExampleConnectable {
-    override val isConnected: Boolean = appSocket.isConnected
+    override val isConnected: Boolean get() = appSocket.isConnected
 
     private val modelA by lazy {
         Observable.create<ModelARemoteModel> { emitter ->
