@@ -1,13 +1,13 @@
 package com.omjoonkim.project.presentation.main
 
-import com.omjoonkim.project.domain.interactor.ExampleCnnectableUseCase
+import com.omjoonkim.project.domain.interactor.ExampleConnectableUseCase
 import com.omjoonkim.project.domain.model.ExampleModels
 import io.reactivex.subscribers.DisposableSubscriber
 import javax.inject.Inject
 
 class MainPresenter @Inject constructor(
     private val mainView: MainContract.View,
-    private val exampleConnectable: ExampleCnnectableUseCase
+    private val exampleConnectable: ExampleConnectableUseCase
 ) : MainContract.Presenter {
 
     init {

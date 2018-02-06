@@ -7,7 +7,7 @@ import com.omjoonkim.project.domain.repository.ExampleRepository
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class ExampleCnnectableUseCase @Inject constructor(
+class ExampleConnectableUseCase @Inject constructor(
     private val repository: ExampleRepository,
     private val threadExecutor: ThreadExecutor,
     private val postExecutionThread: PostExecutionThread

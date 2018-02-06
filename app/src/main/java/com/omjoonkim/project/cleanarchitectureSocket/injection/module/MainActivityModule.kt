@@ -2,7 +2,7 @@ package com.omjoonkim.project.cleanarchitectureSocket.injection.module
 
 import com.omjoonkim.project.cleanarchitectureSocket.injection.scopes.PerActivity
 import com.omjoonkim.project.cleanarchitectureSocket.ui.MainActivity
-import com.omjoonkim.project.domain.interactor.ExampleCnnectableUseCase
+import com.omjoonkim.project.domain.interactor.ExampleConnectableUseCase
 import com.omjoonkim.project.presentation.main.MainContract
 import com.omjoonkim.project.presentation.main.MainPresenter
 import dagger.Module
@@ -20,7 +20,7 @@ open class MainActivityModule {
     @Provides
     internal fun provideBrowsePresenter(
         mainView: MainContract.View,
-        exampleConnectableUseCase: ExampleCnnectableUseCase
+        exampleConnectableUseCase: ExampleConnectableUseCase
     ): MainContract.Presenter = MainPresenter(mainView, exampleConnectableUseCase)
 
 }
