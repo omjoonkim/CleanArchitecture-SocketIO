@@ -24,7 +24,11 @@ CleanArchitecture with SocketIo example project
 
 ### Architecture
 
-![architecture](/Users/beomjoonkim/CleanArchitecture-SocketIO/images/architecture.png)
+![architecture](https://github.com/omjoonkim/CleanArchitecture-SocketIO/images/architecture.png)
+
+
+
+*Impacted by* https://github.com/bufferapp/android-clean-architecture-boilerplate
 
 
 
