@@ -24,7 +24,7 @@ CleanArchitecture with SocketIo example project
 
 ### Architecture
 
-![architecture](https://github.com/omjoonkim/CleanArchitecture-SocketIO/images/architecture.png)
+![architecture](./images/architecture.png)
 
 
 
