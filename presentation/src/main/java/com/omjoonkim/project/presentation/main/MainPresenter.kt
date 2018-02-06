@@ -14,7 +14,7 @@ class MainPresenter @Inject constructor(
         mainView.setPresenter(this)
     }
 
-    override fun start() {
+    override fun onStart() {
         exampleConnectable.connect(javaClass.name, object : DisposableSubscriber<ExampleModels>() {
             override fun onNext(t: ExampleModels) {
                 when (t) {
@@ -34,11 +34,10 @@ class MainPresenter @Inject constructor(
             override fun onError(t: Throwable?) {
                 t?.printStackTrace()
             }
-
         })
     }
 
-    override fun stop() {
+    override fun onStop() {
         exampleConnectable.dispose(javaClass.name)
     }
 
@@ -59,5 +58,4 @@ class MainPresenter @Inject constructor(
                 it.printStackTrace()
             })
     }
-
 }

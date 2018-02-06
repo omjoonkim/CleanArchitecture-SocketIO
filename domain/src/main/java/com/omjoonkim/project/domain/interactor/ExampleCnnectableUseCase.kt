@@ -35,5 +35,4 @@ class ExampleCnnectableUseCase @Inject constructor(
         .requestModelB()
         .subscribeOn(Schedulers.from(threadExecutor))
         .observeOn(postExecutionThread.scheduler)
-
 }

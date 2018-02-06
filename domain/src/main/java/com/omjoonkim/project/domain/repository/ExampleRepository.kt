@@ -9,10 +9,8 @@ interface ExampleRepository {
     val connectable : Connectable
 
     fun getModelAStream(): Observable<ExampleModels.ModelA>
-
     fun getModelBStream(): Observable<ExampleModels.ModelB>
-
     fun requestModelA(): Completable
-
     fun requestModelB(): Completable
 }
+

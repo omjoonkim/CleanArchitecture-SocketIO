@@ -2,14 +2,10 @@ package com.omjoonkim.project.cleanarchitectureSocket.ui
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import com.omjoonkim.project.cleanarchitectureSocket.R
 import com.omjoonkim.project.domain.model.ExampleModels
 import com.omjoonkim.project.presentation.main.MainContract
 import dagger.android.AndroidInjection
-import io.reactivex.Observable
-import io.reactivex.ObservableEmitter
-import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -32,7 +28,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         setContentView(R.layout.activity_main)
         AndroidInjection.inject(this)
 
-        mainPresenter.start()
+        mainPresenter.onStart()
 
         button_requestA.setOnClickListener {
             mainPresenter.onClickAButton()
@@ -41,5 +37,10 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         button_requestB.setOnClickListener {
             mainPresenter.onClickBButton()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mainPresenter.onStop()
     }
 }
